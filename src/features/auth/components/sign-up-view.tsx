@@ -1,6 +1,5 @@
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
-import { SignUp as ClerkSignUpForm } from '@clerk/nextjs';
 import { GitHubLogoIcon } from '@radix-ui/react-icons';
 import { IconStar } from '@tabler/icons-react';
 import { Metadata } from 'next';
@@ -71,11 +70,46 @@ export default function SignUpViewPage({ stars }: { stars: number }) {
               <span className='font-display font-medium'>{stars}</span>
             </div>
           </Link>
-          <ClerkSignUpForm
-            initialValues={{
-              emailAddress: 'your_mail+clerk_test@example.com'
-            }}
-          />
+          <form className='w-full space-y-4'>
+            <div>
+              <label htmlFor='email' className='mb-1 block text-sm font-medium'>
+                Email
+              </label>
+              <input
+                id='email'
+                type='email'
+                className='w-full rounded border px-3 py-2 text-black'
+                autoComplete='email'
+                required
+                disabled
+                value='demo@demo.com'
+              />
+            </div>
+            <div>
+              <label
+                htmlFor='password'
+                className='mb-1 block text-sm font-medium'
+              >
+                Password
+              </label>
+              <input
+                id='password'
+                type='password'
+                className='w-full rounded border px-3 py-2 text-black'
+                autoComplete='current-password'
+                required
+                disabled
+                value='demo'
+              />
+            </div>
+            <button
+              type='submit'
+              className='bg-primary w-full cursor-not-allowed rounded py-2 text-white opacity-50'
+              disabled
+            >
+              Registro deshabilitado (demo)
+            </button>
+          </form>
           <p className='text-muted-foreground px-8 text-center text-sm'>
             By clicking continue, you agree to our{' '}
             <Link

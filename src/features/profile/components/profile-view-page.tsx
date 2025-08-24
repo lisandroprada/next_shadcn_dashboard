@@ -1,9 +1,6 @@
-import { UserProfile } from '@clerk/nextjs';
+'use client';
+import ProfileTabsPage from './profile-tabs-page';
 
 export default function ProfileViewPage() {
-  return (
-    <div className='flex w-full flex-col p-4'>
-      <UserProfile />
-    </div>
-  );
+  return <ProfileTabsPage />;
 }

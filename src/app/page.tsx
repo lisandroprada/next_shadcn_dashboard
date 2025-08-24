@@ -1,12 +1,17 @@
-import { auth } from '@clerk/nextjs/server';
-import { redirect } from 'next/navigation';
+'use client';
+import ProtectedRoute from '@/features/auth/components/ProtectedRoute';
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 
-export default async function Page() {
-  const { userId } = await auth();
-
-  if (!userId) {
-    return redirect('/auth/sign-in');
-  } else {
-    redirect('/dashboard/overview');
-  }
+export default function Page() {
+  const router = useRouter();
+  useEffect(() => {
+    const token =
+      typeof window !== 'undefined' ? localStorage.getItem('authToken') : null;
+    if (token) {
+      router.replace('/dashboard/overview');
+    }
+    // If no token, ProtectedRoute will redirect
+  }, [router]);
+  return <ProtectedRoute>{null}</ProtectedRoute>;
 }

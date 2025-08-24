@@ -124,10 +124,6 @@ const chartConfig = {
   mobile: {
     label: 'Mobile',
     color: 'var(--primary)'
-  },
-  error: {
-    label: 'Error',
-    color: 'var(--primary)'
   }
 } satisfies ChartConfig;
 
@@ -149,11 +145,7 @@ export function BarGraph() {
     setIsClient(true);
   }, []);
 
-  React.useEffect(() => {
-    if (activeChart === 'error') {
-      throw new Error('Mocking Error');
-    }
-  }, [activeChart]);
+  // Eliminado el modo de error mock
 
   if (!isClient) {
     return null;
@@ -172,7 +164,7 @@ export function BarGraph() {
           </CardDescription>
         </div>
         <div className='flex'>
-          {['desktop', 'mobile', 'error'].map((key) => {
+          {['desktop', 'mobile'].map((key) => {
             const chart = key as keyof typeof chartConfig;
             if (!chart || total[key as keyof typeof total] === 0) return null;
             return (

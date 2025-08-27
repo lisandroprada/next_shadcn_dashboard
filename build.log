@@ -1,0 +1,77 @@
+
+> next-shadcn-dashboard-starter@1.0.0 build /Users/lisandropradatoledo/Documents/dev/shadcn/next-shadcn-dashboard-starter
+> next build
+
+   ▲ Next.js 15.3.2
+   - Environments: .env.local, .env
+   - Experiments (use with caution):
+     · clientTraceMetadata
+
+   Creating an optimized production build ...
+<w> [webpack.cache.PackFileCacheStrategy] Serializing big strings (251kiB) impacts deserialization performance (consider using Buffer instead and decode when needed)
+ ✓ Compiled successfully in 26.0s
+   Linting and checking validity of types ...
+
+./src/app/dashboard/settings/page.tsx
+5:10  Warning: 'Separator' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./src/components/layout/header.tsx
+7:10  Warning: 'ThemeSelector' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./src/components/ui/chart.tsx
+12:4  Warning: 'key' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./src/features/auth/components/github-auth-button.tsx
+9:9  Warning: 'callbackUrl' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+16:22  Warning: Unexpected console statement.  no-console
+
+./src/features/auth/components/user-auth-form.tsx
+28:9  Warning: 'callbackUrl' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+38:27  Warning: 'data' is defined but never used.  @typescript-eslint/no-unused-vars
+40:7  Warning: Unexpected console statement.  no-console
+
+./src/features/products/components/product-form.tsx
+77:21  Warning: 'values' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./src/features/profile/components/profile-create-form.tsx
+40:9  Warning: 'params' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+41:9  Warning: 'router' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+42:19  Warning: 'setLoading' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+43:10  Warning: 'open' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+48:10  Warning: 'previousStep' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+
+./src/features/properties/components/PropertyList.tsx
+38:17  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/features/properties/components/property-edit-form/documents-tab.tsx
+10:9  Warning: Unexpected console statement.  no-console
+
+./src/features/properties/components/property-edit-form/location-search.tsx
+5:47  Warning: 'CommandInput' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./src/features/properties/components/property-edit-form/media-tab.tsx
+10:9  Warning: Unexpected console statement.  no-console
+
+./src/features/properties/components/property-edit-form/use-property-form.ts
+68:9  Warning: Unexpected console statement.  no-console
+
+./src/features/properties/components/property-listing.tsx
+2:10  Warning: 'Property' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./src/hooks/use-location-search.ts
+36:9  Warning: Unexpected console statement.  no-console
+
+./src/types/data-table.ts
+7:24  Warning: 'TData' is defined but never used.  @typescript-eslint/no-unused-vars
+7:47  Warning: 'TValue' is defined but never used.  @typescript-eslint/no-unused-vars
+
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/app/api-reference/config/eslint#disabling-rules
+Failed to compile.
+
+src/app/dashboard/properties/[propertyId]/edit-property/page.tsx
+Type error: Type '{ params: { propertyId: string; }; }' does not satisfy the constraint 'PageProps'.
+  Types of property 'params' are incompatible.
+    Type '{ propertyId: string; }' is missing the following properties from type 'Promise<any>': then, catch, finally, [Symbol.toStringTag]
+
+Next.js build worker exited with code: 1 and signal: null
+ ELIFECYCLE  Command failed with exit code 1.

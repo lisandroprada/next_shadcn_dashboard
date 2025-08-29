@@ -72,7 +72,7 @@ export const navItems: NavItem[] = [
       {
         title: 'Clientes',
         shortcut: ['c', 'c'],
-        url: '/dashboard/clientes',
+        url: '/dashboard/parties',
         icon: 'user'
       },
       {
